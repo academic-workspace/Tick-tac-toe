@@ -16,17 +16,18 @@ body {
   padding: 0;
   text-align: center;
   width: 34px;
+  
 }
 .status{
   margin-bottom: 10px;
 }
 ol, ul {
-  padding-left: 30px;
+  padding-left: 40px;
 }
 
-.board-row:after {
+ .board-row:after {
   clear: both;
-  content: "";
+ content: "";
   display: table;
 }
 .square:focus {
@@ -44,4 +45,8 @@ ol, ul {
 
 .game-info {
   margin-left: 20px;
+}
+
+.isHighlight{
+  color: rgb(128, 126, 0);
 }

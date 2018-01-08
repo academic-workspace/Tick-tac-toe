@@ -3,20 +3,36 @@ import React, {Component} from "react";
 //import {Square} from './Square'
 
 function Square(props){
-  console.log(props);
   return(
-    <button className="square" onClick= {props.onClick}>
+    <button className={
+      `square ${props.isHighlight===true ?'isHighlight': ''}`}  onClick= {props.onClick}>
       {props.value}
-    </button>
+    </button>   
   );
+ 
+}
+function FindIndex(isHighlight,value){
+  if (typeof isHighlight !== 'undefined' && isHighlight!== null && isHighlight.length > 0){
+    for(var i= 0; i<= isHighlight.length; i++){
+      if(isHighlight[i]=== value){
+        //console.log("TRUE");
+        return true;
+      }  
+    } 
+  }else{
+    //console.log("FALSE");
+    return false;
+  }
 }
 
+
 export class Board extends Component{
-  renderSquare(i) {
+  renderSquare(i,isHighlight) {
     return (
       <Square
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
+        isHighlight = {FindIndex(this.props.isHighlight,i)}
       />
     );
   }
