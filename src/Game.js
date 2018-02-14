@@ -74,7 +74,7 @@ class Game  extends Component {
     });
     let status;
     if (winner) {
-      status = 'Winner: ' + winner[0];
+      status = 'Winner of the game is: ' + winner[0];
       var winLine= winner[1];
       //console.log('winline is:'+ winLine);
     } else {
